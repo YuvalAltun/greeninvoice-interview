@@ -20,8 +20,10 @@ const assignManagerToEmployee: RequestHandler = async (req, res) => {
     res.status(400);
     throw new Error('manager not found');
   }
-  manager?.employees.push(employee._id);
-  await manager?.save();
+  if (!manager?.employees?.includes(employee._id)) {
+    manager?.employees.push(employee._id);
+    await manager?.save();
+  }
 
   res.send({
     message: 'updated',

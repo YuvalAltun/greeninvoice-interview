@@ -21,9 +21,10 @@ const assignManagerToDepartment: RequestHandler = async (req, res) => {
     res.status(400);
     throw new Error('manager not found');
   }
-  department?.managers.push(manager._id);
-  await department?.save();
-
+  if (!department?.managers?.includes(manager._id)) {
+    department?.managers.push(manager._id);
+    await department?.save();
+  }
   res.send({
     message: 'updated',
     department: department.toJSON()

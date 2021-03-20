@@ -21,8 +21,10 @@ const assignEmployeeToDepartment: RequestHandler = async (req, res) => {
     res.status(400);
     throw new Error('employee not found');
   }
-  department?.employees.push(employee._id);
-  await department?.save();
+  if (!department?.employees?.includes(employee._id)) {
+    department?.employees.push(employee._id);
+    await department?.save();
+  }
 
   res.send({
     message: 'updated',
