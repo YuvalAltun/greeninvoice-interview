@@ -1,0 +1,49 @@
+{
+  "name": "employee-managment",
+  "version": "1.0.0",
+  "description": "this project is a demo for a backend of an employee managment",
+  "main": "dist/index.js",
+  "scripts": {
+    "eslint": "eslint src/server.ts",
+    "build": "tsc",
+    "lint": "eslint src --ext .ts",
+    "dev": "nodemon",
+    "start": "node dist/src/server.js",
+    "test": "jest",
+    "fix-lint": "eslint src --ext .ts --fix"
+  },
+  "dependencies": {
+    "@hapi/joi": "17.1.1",
+    "body-parser": "1.19.0",
+    "chalk": "4.1.0",
+    "compression": "1.7.4",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "mongoose": "5.11.18",
+    "nodemon": "2.0.7",
+    "winston": "3.3.3",
+    "winston-transport": "4.4.0"
+  },
+  "devDependencies": {
+    "@types/compression": "1.7.0",
+    "@types/express": "4.17.11",
+    "@types/hapi__joi": "17.1.6",
+    "@types/jest": "26.0.20",
+    "@types/node": "14.14.31",
+    "@types/supertest": "2.0.10",
+    "@typescript-eslint/eslint-plugin": "4.16.1",
+    "@typescript-eslint/parser": "4.16.1",
+    "eslint": "7.21.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-plugin-import": "2.22.1",
+    "jest": "26.6.3",
+    "jest-express": "1.12.0",
+    "mockingoose": "2.13.2",
+    "supertest": "6.1.3",
+    "ts-jest": "26.5.3",
+    "ts-node": "^9.1.1",
+    "typescript": "4.2.2"
+  },
+  "author": "yuval altun <yuval.altun101@gmail.com> (https://github.com/YuvalAltun)",
+  "license": "ISC"
+}
